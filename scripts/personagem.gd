@@ -16,10 +16,12 @@ var carimboys: Array = [
 	preload("res://sprites/carimboys/carimboy_vermelho.png")
 ]
 var carimboy_atual: int = 0
+var mao = preload("res://sprites/menu/mao_pequena.png")
 
 func _ready() -> void:
 	get_parent().setup()
 	qtd_carimbo = Global.qtd_carimbos
+	Input.set_custom_mouse_cursor(mao, Input.CURSOR_ARROW, Vector2(64, 64))
 
 func _on_timeover() -> void:
 	input_habilitado = true
@@ -31,6 +33,12 @@ func _input(event) -> void:
 	# Troca entre os modos de jogo
 	if event.is_action_pressed("modo_carimbo_bt"):
 		modo_carimbo = !modo_carimbo
+		# Muda o símbolo do mouse
+		if modo_carimbo:
+			Input.set_custom_mouse_cursor(
+				mao, Input.CURSOR_ARROW, Vector2(64, 64))
+		else:
+			Input.set_custom_mouse_cursor(null)
 		queue_redraw()
 		return
 	
