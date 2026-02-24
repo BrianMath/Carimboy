@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wh0h1agvxxoy" path="res://scripts/mapas/level1.gd" id="1_pkypa"]
 [ext_resource type="Texture2D" uid="uid://dsa8ndu6tj2vx" path="res://sprites/mapas/level1_1.png" id="2_qjs7n"]
-[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/player.tscn" id="3_rf2s6"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="3_rf2s6"]
 [ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_7ek2v"]
 [ext_resource type="Texture2D" uid="uid://b1vceh3b321sa" path="res://sprites/mapas/level1_2.png" id="5_qjs7n"]
 [ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="6_rf2s6"]
@@ -16,9 +16,8 @@ position = Vector2(960, 534)
 scale = Vector2(1.0074074, 1.0074074)
 texture = ExtResource("2_qjs7n")
 
-[node name="Player" parent="." unique_id=62674396 instance=ExtResource("3_rf2s6")]
-position = Vector2(100, 780)
-scale = Vector2(1.0074074, 1.0074074)
+[node name="Personagem" parent="." unique_id=62674396 instance=ExtResource("3_rf2s6")]
+position = Vector2(106, 778)
 
 [node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_7ek2v")]
 

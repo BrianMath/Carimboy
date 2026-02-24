@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wh0h1agvxxoy" path="res://scripts/mapas/level1.gd" id="1_yd4jh"]
 [ext_resource type="Texture2D" uid="uid://slsymi28w5u0" path="res://sprites/mapas/level2.png" id="2_luss2"]
-[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/player.tscn" id="3_eclin"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="3_eclin"]
 [ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_2jsi5"]
 
 [node name="Level2" type="Node2D" unique_id=1047036023]
@@ -13,8 +13,8 @@ position = Vector2(963, 542)
 scale = Vector2(1.0222223, 1.0222223)
 texture = ExtResource("2_luss2")
 
-[node name="Player" parent="." unique_id=62674396 instance=ExtResource("3_eclin")]
-position = Vector2(215, 930)
+[node name="Personagem" parent="." unique_id=62674396 instance=ExtResource("3_eclin")]
+position = Vector2(213, 939)
 
 [node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_2jsi5")]
 

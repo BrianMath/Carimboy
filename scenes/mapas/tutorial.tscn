@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bf5t8rm34f4ei" path="res://scripts/mapas/tutorial.gd" id="1_ji5fh"]
 [ext_resource type="Texture2D" uid="uid://b8poq6snlumd" path="res://sprites/mapas/tutorial.png" id="1_so1ry"]
-[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/player.tscn" id="3_ji5fh"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="3_ji5fh"]
 [ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_ji5fh"]
 [ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="5_wjtme"]
 
@@ -16,8 +16,8 @@ position = Vector2(957, 540)
 scale = Vector2(1.0041667, 1.0111111)
 texture = ExtResource("1_so1ry")
 
-[node name="Player" parent="." unique_id=62674396 instance=ExtResource("3_ji5fh")]
-position = Vector2(168, 808)
+[node name="Personagem" parent="." unique_id=62674396 instance=ExtResource("3_ji5fh")]
+position = Vector2(171, 811)
 
 [node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_ji5fh")]
 position = Vector2(-19, -8)

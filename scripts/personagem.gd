@@ -6,7 +6,7 @@ const JUMP_VELOCITY: float = -500.0
 var modo_carimbo: bool = true
 var qtd_carimbo: int = 0
 var draw_distance: int = 100
-var carimbo_scene := preload("res://scenes/carimbo.tscn")
+var carimbo_scene := preload("res://scenes/carimbos/carimbo1.tscn")
 var carimbos: Array
 var input_habilitado = true
 var carimboys: Array = [
