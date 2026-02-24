@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dciyvh78d7w68"]
+
+[ext_resource type="Script" uid="uid://wh0h1agvxxoy" path="res://scripts/mapas/level1.gd" id="1_yd4jh"]
+[ext_resource type="Texture2D" uid="uid://slsymi28w5u0" path="res://sprites/mapas/level2.png" id="2_luss2"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/player.tscn" id="3_eclin"]
+[ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_2jsi5"]
+
+[node name="Level2" type="Node2D" unique_id=1047036023]
+script = ExtResource("1_yd4jh")
+
+[node name="FundoCenario" type="Sprite2D" parent="." unique_id=44029703]
+position = Vector2(963, 542)
+scale = Vector2(1.0222223, 1.0222223)
+texture = ExtResource("2_luss2")
+
+[node name="Player" parent="." unique_id=62674396 instance=ExtResource("3_eclin")]
+position = Vector2(215, 930)
+
+[node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_2jsi5")]
+
+[node name="Formato" parent="Cenario" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(1943, 441, 1788, 444, 1786, 499, 1732, 504, 1732, 565, 1596, 578, 1602, 734, 1552, 792, 1560, 934, 1498, 956, 1449, 990, 1392, 1014, 1244, 982, 1245, 934, 1216, 894, 1177, 888, 1164, 761, 1144, 734, 1099, 720, 1084, 600, 925, 605, 919, 465, 942, 449, 1005, 346, 1025, 284, 1027, 217, 915, 208, 632, 215, 633, 247, 568, 252, 585, 304, 648, 309, 747, 351, 775, 359, 830, 410, 826, 432, 732, 417, 730, 435, 765, 471, 799, 591, 886, 681, 982, 737, 999, 847, 999, 988, 858, 983, 754, 994, 319, 1010, 252, 1027, 128, 1026, 114, 1013, 64, 1009, 53, 913, 72, 698, 98, 680, 113, 527, 135, 519, 156, 458, 151, 365, 136, 321, 149, 282, 187, 296, 200, 324, 229, 317, 213, 216, 262, 205, 279, 182, 283, 29, 336, 27, 337, 49, 348, 22, 571, 14, 726, 23, 981, 23, 983, 42, 992, 21, 1198, 32, 1215, 62, 1220, 122, 1221, 256, 1244, 336, 1283, 449, 1297, 454, 1309, 519, 1317, 512, 1314, 393, 1340, 339, 1339, 284, 1362, 262, 1364, 193, 1389, 98, 1402, 99, 1411, 42, 1705, 22, 1710, 56, 1721, 17, 1948, 45, 1708, 7, 276, 9, 18, 507, 45, 1031, 1954, 1026)
+
+[node name="CenarioCogumelo" parent="." unique_id=598359846 instance=ExtResource("4_2jsi5")]
+
+[node name="Formato" parent="CenarioCogumelo" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(379, 738, 674, 743, 674, 713, 651, 695, 624, 682, 594, 672, 450, 673, 426, 681, 401, 694, 379, 711)
+
+[editable path="Cenario"]
+[editable path="CenarioCogumelo"]

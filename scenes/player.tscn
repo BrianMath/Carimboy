@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cihnplabnec0n"]
+
+[ext_resource type="Script" uid="uid://b2kw0k06v3mp3" path="res://scripts/personagem.gd" id="1_4dohe"]
+[ext_resource type="Texture2D" uid="uid://bus28x33gbkhp" path="res://sprites/carimboys/carimboy_azul.png" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://dbdtiml38ao5f" path="res://sounds/carimbo.mp3" id="4_dqkch"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 31.0
+height = 114.0
+
+[node name="Player" type="CharacterBody2D" unique_id=62674396]
+collision_mask = 6
+script = ExtResource("1_4dohe")
+metadata/_edit_horizontal_guides_ = [-24.0]
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=2124664380]
+position = Vector2(1.9073486e-06, 4.7683716e-07)
+scale = Vector2(0.23666668, 0.21666667)
+texture = ExtResource("2_qhqgy")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=784244878]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=977255520]
+stream = ExtResource("4_dqkch")
+volume_db = 5.0

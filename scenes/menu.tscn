@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://chvrnetb7wo5t"]
+
+[ext_resource type="Script" uid="uid://dbmp1oyf4jstc" path="res://scripts/menu.gd" id="1_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://b3i3c20getp0g" path="res://sprites/menu/menu.png" id="2_g3eks"]
+[ext_resource type="Texture2D" uid="uid://bbjuh1vdjsm6q" path="res://sprites/menu/jogar.png" id="3_v86rl"]
+[ext_resource type="Texture2D" uid="uid://c8ij4afejdd81" path="res://sprites/menu/sair.png" id="4_13sgg"]
+[ext_resource type="Texture2D" uid="uid://chbrp5acvxo7a" path="res://sprites/menu/creditos.png" id="5_i6lef"]
+[ext_resource type="AudioStream" uid="uid://dbdtiml38ao5f" path="res://sounds/carimbo.mp3" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://bk2h0c0ombwim" path="res://sprites/menu/picotado.png" id="6_v86rl"]
+
+[node name="Menu" type="Node2D" unique_id=965978424]
+script = ExtResource("1_4ytvr")
+metadata/_edit_horizontal_guides_ = [770.0]
+
+[node name="bg" type="Sprite2D" parent="." unique_id=175637170]
+z_index = -10
+z_as_relative = false
+position = Vector2(960, 540)
+texture = ExtResource("2_g3eks")
+
+[node name="tbtn_jogar" type="TextureButton" parent="." unique_id=463417137]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 190.0
+offset_top = 772.0
+offset_right = 590.0
+offset_bottom = 930.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_v86rl")
+
+[node name="tbtn_sair" type="TextureButton" parent="." unique_id=487673392]
+offset_left = 1396.0
+offset_top = 758.0
+offset_right = 1685.0
+offset_bottom = 941.0
+texture_normal = ExtResource("4_13sgg")
+
+[node name="tbtn_creditos" type="TextureButton" parent="." unique_id=1308074305]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 778.0
+offset_top = 755.0
+offset_right = 1160.0
+offset_bottom = 891.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_i6lef")
+
+[node name="picotado" type="Sprite2D" parent="." unique_id=1479889075]
+z_index = -200
+z_as_relative = false
+position = Vector2(931.5, 315)
+scale = Vector2(1.1574999, 0.76000005)
+texture = ExtResource("6_v86rl")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=1203447105]
+stream = ExtResource("6_g3eks")
+volume_db = 5.0
+
+[connection signal="pressed" from="tbtn_jogar" to="." method="_on_tbtn_jogar_pressed"]
+[connection signal="pressed" from="tbtn_sair" to="." method="_on_tbtn_sair_pressed"]
+[connection signal="pressed" from="tbtn_creditos" to="." method="_on_tbtn_creditos_pressed"]

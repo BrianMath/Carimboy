@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cj7ef72k5ufvu"]
+
+[ext_resource type="Script" uid="uid://wh0h1agvxxoy" path="res://scripts/mapas/level1.gd" id="1_pkypa"]
+[ext_resource type="Texture2D" uid="uid://dsa8ndu6tj2vx" path="res://sprites/mapas/level1_1.png" id="2_qjs7n"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/player.tscn" id="3_rf2s6"]
+[ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_7ek2v"]
+[ext_resource type="Texture2D" uid="uid://b1vceh3b321sa" path="res://sprites/mapas/level1_2.png" id="5_qjs7n"]
+[ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="6_rf2s6"]
+
+[node name="Level1" type="Node2D" unique_id=178785527]
+script = ExtResource("1_pkypa")
+metadata/_edit_horizontal_guides_ = [570.0]
+
+[node name="FundoCenario" type="Sprite2D" parent="." unique_id=1779385267]
+position = Vector2(960, 534)
+scale = Vector2(1.0074074, 1.0074074)
+texture = ExtResource("2_qjs7n")
+
+[node name="Player" parent="." unique_id=62674396 instance=ExtResource("3_rf2s6")]
+position = Vector2(100, 780)
+scale = Vector2(1.0074074, 1.0074074)
+
+[node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_7ek2v")]
+
+[node name="Formato" parent="Cenario" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(1927, 789, 1313, 793, 1254, 765, 1216, 568, 1089, 561, 905, 569, 859, 559, 817, 560, 779.4958, 571.95306, 646, 569, 647, 587, 653, 604, 690, 617, 696, 634, 762, 662, 804, 712, 847, 723, 883, 763, 877, 880, 699, 900, 680, 955, 299, 956, 241, 916, 198, 916, 184, 885, 154, 913, 2, 923, -3, 159, 120, 208, 227, 236, 303, 246, 322, 315, 354, 252, 390, 213, 468, 203, 603, 178, 802, 132, 886, 140, 982, 150, 999, 213, 1016, 174, 1070, 135, 1201, 101, 1194, 152, 1206, 195, 1228, 183, 1237, 117, 1294, 107, 1369, 114, 1365, 136, 1388, 159, 1399, 225, 1436, 150, 1447, 119, 1493, 109, 1506, 142, 1500, 184, 1526, 193, 1536, 217, 1554, 173, 1593, 130, 1728, 193, 1746, 259, 1783, 252, 1782, 325, 1811, 331, 1933, 349, 1564, 39, -15, 153, -11, 944, 741, 1006)
+
+[node name="FundoCenario2" type="Sprite2D" parent="." unique_id=198969083]
+position = Vector2(960, 534)
+scale = Vector2(1.0074074, 1.0074074)
+texture = ExtResource("5_qjs7n")
+
+[node name="MudaAyrton" parent="." unique_id=1579505250 instance=ExtResource("6_rf2s6")]
+position = Vector2(1858, 574)
+
+[editable path="Cenario"]

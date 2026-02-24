@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b6bht685sqdfh"]
+
+[ext_resource type="Texture2D" uid="uid://b3i3c20getp0g" path="res://sprites/menu/menu.png" id="1_jddgq"]
+[ext_resource type="Script" uid="uid://dw81u3ou1jlen" path="res://scripts/creditos.gd" id="1_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://c8ij4afejdd81" path="res://sprites/menu/sair.png" id="2_lgbdq"]
+[ext_resource type="Texture2D" uid="uid://ln5g11o0vcyh" path="res://sprites/icons/jhope.png" id="4_2ove7"]
+[ext_resource type="Texture2D" uid="uid://bk2h0c0ombwim" path="res://sprites/menu/picotado.png" id="4_3ghxt"]
+[ext_resource type="Texture2D" uid="uid://ckqp6nycpdl1e" path="res://sprites/icons/jimin.png" id="5_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://ds6o72ox6842g" path="res://sprites/icons/jin.png" id="6_3ghxt"]
+[ext_resource type="Texture2D" uid="uid://bts35biakmpnc" path="res://sprites/icons/jungkook.png" id="7_n1vwi"]
+[ext_resource type="Texture2D" uid="uid://d2tde6c45ao6b" path="res://sprites/icons/v.png" id="8_ouidq"]
+[ext_resource type="AudioStream" uid="uid://dbdtiml38ao5f" path="res://sounds/carimbo.mp3" id="9_lrn2f"]
+
+[node name="Creditos" type="Node2D" unique_id=1276479479]
+script = ExtResource("1_lrn2f")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1004146942]
+z_index = -10
+z_as_relative = false
+position = Vector2(960, 540)
+texture = ExtResource("1_jddgq")
+
+[node name="tbtn_sair" type="TextureButton" parent="." unique_id=21633303]
+offset_left = 1554.0
+offset_top = 804.0
+offset_right = 1843.0
+offset_bottom = 987.1884
+texture_normal = ExtResource("2_lgbdq")
+
+[node name="picotado" type="Sprite2D" parent="." unique_id=1576013563]
+z_index = -200
+z_as_relative = false
+position = Vector2(934, 317.00003)
+scale = Vector2(1.1574999, 0.76000005)
+texture = ExtResource("4_3ghxt")
+
+[node name="Jhope" type="Sprite2D" parent="." unique_id=678759390]
+position = Vector2(165, 666)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_2ove7")
+
+[node name="Jimin" type="Sprite2D" parent="." unique_id=531029991]
+position = Vector2(604, 627)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("5_lrn2f")
+
+[node name="Jin" type="Sprite2D" parent="." unique_id=1387058398]
+position = Vector2(1109, 614)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("6_3ghxt")
+
+[node name="Jungkook" type="Sprite2D" parent="." unique_id=1490685892]
+position = Vector2(1231, 879)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("7_n1vwi")
+
+[node name="V" type="Sprite2D" parent="." unique_id=1604362189]
+position = Vector2(524, 909)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("8_ouidq")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=164527287]
+stream = ExtResource("9_lrn2f")
+volume_db = 5.0
+
+[connection signal="pressed" from="tbtn_sair" to="." method="_on_tbtn_sair_pressed"]

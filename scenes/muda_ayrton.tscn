@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://071su61dp8de"]
+
+[ext_resource type="Script" uid="uid://do7x4hym8c1um" path="res://scripts/muda_ayrton.gd" id="1_d0jsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1xgn"]
+size = Vector2(31, 936)
+
+[node name="MudaAyrton" type="Area2D" unique_id=1579505250]
+collision_layer = 2
+script = ExtResource("1_d0jsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=605292440]
+shape = SubResource("RectangleShape2D_w1xgn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

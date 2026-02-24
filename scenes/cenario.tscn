@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cnbmrg3kdnd36"]
+
+[ext_resource type="Script" uid="uid://b5feiusa0l8gb" path="res://scripts/cenario.gd" id="1_i5ouh"]
+
+[node name="Cenario" type="StaticBody2D" unique_id=1886531964]
+collision_layer = 2
+script = ExtResource("1_i5ouh")
+
+[node name="Formato" type="Polygon2D" parent="." unique_id=280072083]

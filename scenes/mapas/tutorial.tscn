@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cv078wt30pf3w"]
+
+[ext_resource type="Script" uid="uid://bf5t8rm34f4ei" path="res://scripts/mapas/tutorial.gd" id="1_ji5fh"]
+[ext_resource type="Texture2D" uid="uid://b8poq6snlumd" path="res://sprites/mapas/tutorial.png" id="1_so1ry"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/player.tscn" id="3_ji5fh"]
+[ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_ji5fh"]
+[ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="5_wjtme"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ji5fh"]
+
+[node name="Tutorial" type="Node2D" unique_id=99934704]
+script = ExtResource("1_ji5fh")
+
+[node name="FundoCenario" type="Sprite2D" parent="." unique_id=1182743774]
+position = Vector2(957, 540)
+scale = Vector2(1.0041667, 1.0111111)
+texture = ExtResource("1_so1ry")
+
+[node name="Player" parent="." unique_id=62674396 instance=ExtResource("3_ji5fh")]
+position = Vector2(168, 808)
+
+[node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_ji5fh")]
+position = Vector2(-19, -8)
+
+[node name="Formato" parent="Cenario" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(1018, 1095, 1019, 918, 621, 934, 208, 934, 18, 938, 19, 8, 1939, 8, 1939, 896, 1473, 910, 1475, 1096, 1947, 1096, 1947, 0, 11, 0, 11, 1096)
+
+[node name="FimDoMundo" type="Area2D" parent="." unique_id=1468839769]
+position = Vector2(1184, 1440)
+collision_layer = 2
+
+[node name="ColisaoFim" type="CollisionShape2D" parent="FimDoMundo" unique_id=1622455143]
+shape = SubResource("WorldBoundaryShape2D_ji5fh")
+metadata/_edit_lock_ = true
+
+[node name="MudaAyrton" parent="." unique_id=1579505250 instance=ExtResource("5_wjtme")]
+position = Vector2(1816, 529)
+
+[node name="CollisionShape2D" parent="MudaAyrton" index="0" unique_id=605292440]
+position = Vector2(106.5, -82)
+
+[connection signal="body_entered" from="FimDoMundo" to="." method="_on_area_2d_body_entered"]
+
+[editable path="Cenario"]
+[editable path="MudaAyrton"]
