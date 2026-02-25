@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ln5g11o0vcyh"
-path="res://.godot/imported/jhope.png-8542159e00cd8cd7a1b564ce82305997.ctex"
+uid="uid://cpd8ohf4amnll"
+path="res://.godot/imported/brian.png-9921ce7f65f18316a265f5d4a46cd153.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/jhope.png"
-dest_files=["res://.godot/imported/jhope.png-8542159e00cd8cd7a1b564ce82305997.ctex"]
+source_file="res://sprites/icons/brian.png"
+dest_files=["res://.godot/imported/brian.png-9921ce7f65f18316a265f5d4a46cd153.ctex"]
 
 [params]
 

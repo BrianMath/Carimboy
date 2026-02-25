@@ -3,13 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://b3i3c20getp0g" path="res://sprites/menu/menu.png" id="1_jddgq"]
 [ext_resource type="Script" uid="uid://dw81u3ou1jlen" path="res://scripts/creditos.gd" id="1_lrn2f"]
 [ext_resource type="Texture2D" uid="uid://c8ij4afejdd81" path="res://sprites/menu/sair.png" id="2_lgbdq"]
-[ext_resource type="Texture2D" uid="uid://ln5g11o0vcyh" path="res://sprites/icons/jhope.png" id="4_2ove7"]
 [ext_resource type="Texture2D" uid="uid://bk2h0c0ombwim" path="res://sprites/menu/picotado.png" id="4_3ghxt"]
-[ext_resource type="Texture2D" uid="uid://ckqp6nycpdl1e" path="res://sprites/icons/jimin.png" id="5_lrn2f"]
-[ext_resource type="Texture2D" uid="uid://ds6o72ox6842g" path="res://sprites/icons/jin.png" id="6_3ghxt"]
-[ext_resource type="Texture2D" uid="uid://bts35biakmpnc" path="res://sprites/icons/jungkook.png" id="7_n1vwi"]
-[ext_resource type="Texture2D" uid="uid://d2tde6c45ao6b" path="res://sprites/icons/v.png" id="8_ouidq"]
+[ext_resource type="Texture2D" uid="uid://cpd8ohf4amnll" path="res://sprites/icons/brian.png" id="6_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://cut2k37gtqitl" path="res://sprites/icons/bult xd.png" id="7_3ghxt"]
+[ext_resource type="Texture2D" uid="uid://cbav6ijpymk8n" path="res://sprites/icons/rafael.png" id="8_n1vwi"]
 [ext_resource type="AudioStream" uid="uid://dbdtiml38ao5f" path="res://sounds/carimbo.mp3" id="9_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://d0e1410rxdhg0" path="res://sprites/icons/victor.png" id="9_ouidq"]
 
 [node name="Creditos" type="Node2D" unique_id=1276479479]
 script = ExtResource("1_lrn2f")
@@ -34,33 +33,94 @@ position = Vector2(934, 317.00003)
 scale = Vector2(1.1574999, 0.76000005)
 texture = ExtResource("4_3ghxt")
 
-[node name="Jhope" type="Sprite2D" parent="." unique_id=678759390]
-position = Vector2(165, 666)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("4_2ove7")
-
-[node name="Jimin" type="Sprite2D" parent="." unique_id=531029991]
-position = Vector2(604, 627)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("5_lrn2f")
-
-[node name="Jin" type="Sprite2D" parent="." unique_id=1387058398]
-position = Vector2(1109, 614)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("6_3ghxt")
-
-[node name="Jungkook" type="Sprite2D" parent="." unique_id=1490685892]
-position = Vector2(1231, 879)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("7_n1vwi")
-
-[node name="V" type="Sprite2D" parent="." unique_id=1604362189]
-position = Vector2(524, 909)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("8_ouidq")
-
 [node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=164527287]
 stream = ExtResource("9_lrn2f")
 volume_db = 5.0
+
+[node name="Pessoas" type="Node" parent="." unique_id=1836402962]
+
+[node name="Brian" type="Sprite2D" parent="Pessoas" unique_id=2007350018]
+position = Vector2(245, 914)
+texture = ExtResource("6_lrn2f")
+
+[node name="Label" type="Label" parent="Pessoas/Brian" unique_id=1627504834]
+anchors_preset = -1
+anchor_left = 0.298
+anchor_top = 0.043
+anchor_right = 0.647
+anchor_bottom = 0.22200002
+offset_left = -299.8
+offset_top = -299.8
+offset_right = -300.2
+offset_bottom = -300.2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "BrianMath
+Programador"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BultXd" type="Sprite2D" parent="Pessoas" unique_id=1098059536]
+position = Vector2(755, 722)
+texture = ExtResource("7_3ghxt")
+
+[node name="Label2" type="Label" parent="Pessoas/BultXd" unique_id=140358590]
+anchors_preset = -1
+anchor_left = 0.293
+anchor_top = 0.71000004
+anchor_right = 0.625
+anchor_bottom = 0.878
+offset_left = -309.8
+offset_top = -306.00003
+offset_right = -300.0
+offset_bottom = -299.8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Will/Bult
+Artista"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rafael" type="Sprite2D" parent="Pessoas" unique_id=795735034]
+position = Vector2(1318, 866)
+texture = ExtResource("8_n1vwi")
+
+[node name="Label3" type="Label" parent="Pessoas/Rafael" unique_id=2066935724]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.010000001
+anchor_right = 0.59800005
+anchor_bottom = 0.19800001
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -299.79996
+offset_bottom = -299.80002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "GaSab
+Artista"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Victor" type="Sprite2D" parent="Pessoas" unique_id=1135165103]
+position = Vector2(1692, 431)
+texture = ExtResource("9_ouidq")
+
+[node name="Label4" type="Label" parent="Pessoas/Victor" unique_id=396926201]
+anchors_preset = -1
+anchor_left = 0.33
+anchor_top = 0.712
+anchor_right = 0.67800003
+anchor_bottom = 0.89000005
+offset_left = -300.0
+offset_top = -300.2
+offset_right = -299.80002
+offset_bottom = -300.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "yasushiki
+Programador"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="tbtn_sair" to="." method="_on_tbtn_sair_pressed"]
