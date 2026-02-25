@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dyl0dstjtb44s"]
+
+[ext_resource type="Script" uid="uid://c5jl4uv3gcqee" path="res://scripts/carimbos/carimbo1.gd" id="1_w10i3"]
+[ext_resource type="Texture2D" uid="uid://deo5a6imx4soj" path="res://sprites/carimbos/carimbo0.png" id="2_w10i3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxde8"]
+size = Vector2(126, 98.74286)
+
+[node name="Carimbo" type="StaticBody2D" unique_id=1489284514]
+collision_layer = 4
+script = ExtResource("1_w10i3")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1604177011]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(0.52117264, 0.36792454)
+texture = ExtResource("2_w10i3")
+
+[node name="ColisaoCarimbo" type="CollisionShape2D" parent="." unique_id=1475117077]
+position = Vector2(1, 2.999999)
+scale = Vector2(1, 0.546875)
+shape = SubResource("RectangleShape2D_kxde8")

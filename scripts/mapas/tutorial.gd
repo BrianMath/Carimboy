@@ -6,4 +6,4 @@ func setup() -> void:
 	Global.qtd_carimbos = 4
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	$Player.position = Global.pos_inicial
+	$Personagem.position = Global.pos_inicial

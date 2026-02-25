@@ -1,22 +1,23 @@
-[gd_scene format=3 uid="uid://dyl0dstjtb44s"]
+[gd_scene format=3 uid="uid://h6iuw5op3vxo"]
 
-[ext_resource type="Script" uid="uid://c5jl4uv3gcqee" path="res://scripts/carimbos/carimbo1.gd" id="1_6ewvh"]
-[ext_resource type="Texture2D" uid="uid://yd3vv2rbk1r" path="res://sprites/carimbos/carimbo3.png" id="2_06aco"]
+[ext_resource type="Script" uid="uid://bbbry2d2lnp6g" path="res://scripts/carimbos/carimbo2.gd" id="1_kppmg"]
+[ext_resource type="Texture2D" uid="uid://cu7itv0dmep7k" path="res://sprites/carimbos/carimbo1.png" id="2_6ewvh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxde8"]
-size = Vector2(130, 109.71429)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kppmg"]
+size = Vector2(136, 282)
 
-[node name="Carimbo" type="StaticBody2D" unique_id=1489284514]
+[node name="CarimboEscada" type="Area2D" unique_id=102934385 groups=["escada"]]
 collision_layer = 4
-script = ExtResource("1_6ewvh")
+script = ExtResource("1_kppmg")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=1604177011]
-position = Vector2(3.8146973e-06, 0)
-scale = Vector2(0.5625, 0.4375)
-texture = ExtResource("2_06aco")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=743528855]
+scale = Vector2(0.44086018, 0.5942029)
+texture = ExtResource("2_6ewvh")
 
-[node name="ColisaoCarimbo" type="CollisionShape2D" parent="." unique_id=1475117077]
-visible = false
-position = Vector2(0, -8.940697e-07)
-scale = Vector2(1, 0.546875)
-shape = SubResource("RectangleShape2D_kxde8")
+[node name="ColisaoEscada" type="CollisionShape2D" parent="." unique_id=1407753399]
+position = Vector2(0, 2.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_kppmg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
