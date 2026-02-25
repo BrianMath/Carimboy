@@ -51,18 +51,18 @@ func _input(event) -> void:
 		return
 	
 	# Muda a cor do Carimboy
-	if event.is_action_pressed("carimboy_azul"):
-		$PlayerSprite.texture = carimboys[0]
+	if event.is_action_pressed("carimbo0"):
+		#$PlayerSprite.texture = carimboys[0]
 		carimboy_atual = 0
-	elif event.is_action_pressed("carimboy_amarelo"):
-		$PlayerSprite.texture = carimboys[1]
+	elif event.is_action_pressed("carimbo1"):
+		#$PlayerSprite.texture = carimboys[1]
 		carimboy_atual = 1
-	elif event.is_action_pressed("carimboy_verde"):
-		$PlayerSprite.texture = carimboys[2]
-		carimboy_atual = 2
-	elif event.is_action_pressed("carimboy_vermelho"):
-		$PlayerSprite.texture = carimboys[3]
-		carimboy_atual = 3
+	#elif event.is_action_pressed("carimboy_verde"):
+		#$PlayerSprite.texture = carimboys[2]
+		#carimboy_atual = 2
+	#elif event.is_action_pressed("carimboy_vermelho"):
+		#$PlayerSprite.texture = carimboys[3]
+		#carimboy_atual = 3
 	
 	# Ação de carimbar
 	if event.is_action_pressed("clicar") and qtd_carimbo > 0:
@@ -95,6 +95,9 @@ func _physics_process(delta: float) -> void:
 	var dir_horizontal := Input.get_axis("esquerda", "direita")
 	var dir_vertical := Input.get_axis("cima", "baixo")
 	
+	if no_chao or na_escada:
+		$PlayerSprite.animation = "parado"
+	
 	# A ação de subir e descer só funciona se estiver em contato com a escada
 	if na_escada:
 		# Enquanto estiver pressionando cima/baixo se movimenta na escada
@@ -109,6 +112,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Só pode pular se não estiver subindo
 	if Input.is_action_just_pressed("pular") and (no_chao or na_escada):
+		$PlayerSprite.animation = "pulando"
 		na_escada = false
 		velocity.y = JUMP_VELOCITY
 	
