@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dctjhaemqu4i0"]
+
+[ext_resource type="Script" uid="uid://2osml0p8yug3" path="res://scripts/mapas/level4.gd" id="1_jfrbt"]
+[ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="2_6gffq"]
+[ext_resource type="PackedScene" uid="uid://dc3coa6fe2s3v" path="res://scenes/hud.tscn" id="3_36neb"]
+[ext_resource type="Texture2D" uid="uid://do4gwn278rjsn" path="res://sprites/mapas/level4.png" id="3_eifr3"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="3_rycqv"]
+[ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="5_rycqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rycqv"]
+radius = 148.0
+height = 481.0
+
+[node name="Level4" type="Node2D" unique_id=640187939]
+script = ExtResource("1_jfrbt")
+
+[node name="FundoCenario" type="Sprite2D" parent="." unique_id=1967445694]
+position = Vector2(960, 540)
+texture = ExtResource("3_eifr3")
+
+[node name="HUD" parent="." unique_id=1988032793 instance=ExtResource("3_36neb")]
+
+[node name="CanvasPersonagem" type="CanvasLayer" parent="." unique_id=226774066]
+layer = 2
+
+[node name="Personagem" parent="CanvasPersonagem" unique_id=62674396 instance=ExtResource("3_rycqv")]
+position = Vector2(62, 533)
+
+[node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("2_6gffq")]
+
+[node name="Formato" parent="Cenario" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-1, 97, 0, 595, 69, 599, 153, 602, 216, 614, 289, 660, 337, 684, 446, 753, 500, 785, 546, 826, 637, 833, 690, 854, 749, 891, 830, 925, 983, 931, 1003, 938, 1072, 926, 1149, 918, 1162, 926, 1189, 921, 1188, 881, 1233.6146, 880.3172, 1233, 855, 1267, 850, 1272, 834, 1300, 832, 1306, 812, 1706, 812, 1710.7264, 825.7351, 1748, 827, 1752, 849, 1786, 851, 1800, 870, 1856, 871, 1854, 943, 1979, 922, 1802, 1005, 1400, 982, 1035, 1003, 499, 1012, -65, 755, -105, 70, 0, 0, 1921, 0, 2026, 17, 1920, 933, 1921, 33, 1850, 33, 1781, 30, 1757, 42, 1744, 56, 1700, 21, 1692, 6, 1693, 1, 1331, 1, 1303, 16, 1255, 26, 1245, 35, 1227, 37, 1191, 69, 1185, 83, 1166, 107, 1152, 111, 1119, 88, 1066, 78, 1056, 62, 1031, 69, 1019, 131, 1002, 148, 990, 146, 989, 125, 994, 97, 983, 49, 926, 46, 823, 45, 773, 56, 694, 66, 685, 74, 679, 111, 665, 126, 646, 136, 644, 89, 619, 42, 580, 62, 574, 82, 580, 153, 558, 186, 535, 147, 534, 188, 524, 258, 510, 283, 508, 225, 507, 160, 500, 130, 492, 73, 462, 78, 440, 135, 432, 141, 431, 124, 435, 94, 432, 66, 323, 87, 284, 93, 284, 83, 244, 84, 62, 99)
+
+[node name="MudaAyrton" parent="." unique_id=1579505250 instance=ExtResource("5_rycqv")]
+position = Vector2(1816, 529)
+
+[node name="CollisionShape2D" parent="MudaAyrton" index="0" unique_id=605292440]
+position = Vector2(-309, 37.5)
+shape = SubResource("CapsuleShape2D_rycqv")
+
+[editable path="Cenario"]
+[editable path="MudaAyrton"]

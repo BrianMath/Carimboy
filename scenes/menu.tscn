@@ -31,7 +31,6 @@ offset_bottom = 930.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_v86rl")
-flip_h = true
 
 [node name="tbtn_sair" type="TextureButton" parent="." unique_id=487673392]
 offset_left = 1396.0
@@ -39,7 +38,6 @@ offset_top = 758.0
 offset_right = 1685.0
 offset_bottom = 941.0
 texture_normal = ExtResource("4_13sgg")
-flip_h = true
 
 [node name="tbtn_creditos" type="TextureButton" parent="." unique_id=1308074305]
 anchors_preset = 8
@@ -54,7 +52,6 @@ offset_bottom = 891.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("5_i6lef")
-flip_h = true
 
 [node name="picotado" type="Sprite2D" parent="." unique_id=1479889075]
 z_index = -200
@@ -65,7 +62,7 @@ texture = ExtResource("6_v86rl")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=1203447105]
 stream = ExtResource("6_g3eks")
-volume_db = 5.0
+volume_db = 10.0
 
 [connection signal="pressed" from="tbtn_jogar" to="." method="_on_tbtn_jogar_pressed"]
 [connection signal="pressed" from="tbtn_sair" to="." method="_on_tbtn_sair_pressed"]

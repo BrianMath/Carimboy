@@ -1,20 +1,70 @@
 [gd_scene format=3 uid="uid://cihnplabnec0n"]
 
 [ext_resource type="Script" uid="uid://b2kw0k06v3mp3" path="res://scripts/personagem.gd" id="1_4dohe"]
-[ext_resource type="Texture2D" uid="uid://bus28x33gbkhp" path="res://sprites/carimboys/carimboy_azul.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://3djo2rw4mgwb" path="res://sprites/carimboys/animacao.png" id="2_hfj4i"]
 [ext_resource type="Texture2D" uid="uid://xsedidptkqjd" path="res://sprites/carimboys/pulando.png" id="3_en60c"]
 [ext_resource type="AudioStream" uid="uid://dbdtiml38ao5f" path="res://sounds/carimbo.mp3" id="4_dqkch"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc3tx"]
+atlas = ExtResource("2_hfj4i")
+region = Rect2(0, 0, 560, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8b40"]
+atlas = ExtResource("2_hfj4i")
+region = Rect2(1120, 0, 560, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7him"]
+atlas = ExtResource("2_hfj4i")
+region = Rect2(1680, 0, 560, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4wo2"]
+atlas = ExtResource("2_hfj4i")
+region = Rect2(0, 420, 560, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3odkn"]
+atlas = ExtResource("2_hfj4i")
+region = Rect2(560, 420, 560, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_760tl"]
+atlas = ExtResource("2_hfj4i")
+region = Rect2(1120, 420, 560, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en60c"]
+atlas = ExtResource("2_hfj4i")
+region = Rect2(1120, 0, 560, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfj4i"]
+atlas = ExtResource("3_en60c")
+region = Rect2(0, 0, 420, 420)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bss74"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc3tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8b40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7him")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4wo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3odkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_760tl")
+}],
 "loop": true,
 "name": &"andando",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qhqgy")
+"texture": SubResource("AtlasTexture_en60c")
 }],
 "loop": true,
 "name": &"parado",
@@ -22,7 +72,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_en60c")
+"texture": SubResource("AtlasTexture_hfj4i")
 }],
 "loop": true,
 "name": &"pulando",
@@ -30,8 +80,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
-radius = 31.0
-height = 114.0
+radius = 24.0
+height = 92.0
 
 [node name="Personagem" type="CharacterBody2D" unique_id=62674396]
 z_index = 1
@@ -43,7 +93,7 @@ metadata/_edit_horizontal_guides_ = [-24.0]
 position = Vector2(0, -0.99999994)
 scale = Vector2(0.21666665, 0.21666665)
 sprite_frames = SubResource("SpriteFrames_bss74")
-animation = &"pulando"
+animation = &"andando"
 autoplay = "parado"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=784244878]

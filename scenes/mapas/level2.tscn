@@ -1,20 +1,27 @@
 [gd_scene format=3 uid="uid://dciyvh78d7w68"]
 
-[ext_resource type="Script" uid="uid://wh0h1agvxxoy" path="res://scripts/mapas/level1.gd" id="1_yd4jh"]
+[ext_resource type="Script" uid="uid://bimee27kuc2tk" path="res://scripts/mapas/level2.gd" id="1_luss2"]
 [ext_resource type="Texture2D" uid="uid://slsymi28w5u0" path="res://sprites/mapas/level2.png" id="2_luss2"]
+[ext_resource type="PackedScene" uid="uid://dc3coa6fe2s3v" path="res://scenes/hud.tscn" id="3_2jsi5"]
 [ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="3_eclin"]
 [ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_2jsi5"]
+[ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="5_luss2"]
 
 [node name="Level2" type="Node2D" unique_id=1047036023]
-script = ExtResource("1_yd4jh")
+script = ExtResource("1_luss2")
 
 [node name="FundoCenario" type="Sprite2D" parent="." unique_id=44029703]
 position = Vector2(963, 542)
 scale = Vector2(1.0222223, 1.0222223)
 texture = ExtResource("2_luss2")
 
-[node name="Personagem" parent="." unique_id=62674396 instance=ExtResource("3_eclin")]
-position = Vector2(213, 939)
+[node name="HUD" parent="." unique_id=1988032793 instance=ExtResource("3_2jsi5")]
+
+[node name="CanvasPersonagem" type="CanvasLayer" parent="." unique_id=1936001684]
+layer = 2
+
+[node name="Personagem" parent="CanvasPersonagem" unique_id=62674396 instance=ExtResource("3_eclin")]
+position = Vector2(171, 811)
 
 [node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_2jsi5")]
 
@@ -28,5 +35,12 @@ polygon = PackedVector2Array(1943, 441, 1788, 444, 1786, 499, 1732, 504, 1732, 5
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(379, 738, 674, 743, 674, 713, 651, 695, 624, 682, 594, 672, 450, 673, 426, 681, 401, 694, 379, 711)
 
+[node name="MudaAyrton" parent="." unique_id=1579505250 instance=ExtResource("5_luss2")]
+position = Vector2(1816, 529)
+
+[node name="CollisionShape2D" parent="MudaAyrton" index="0" unique_id=605292440]
+position = Vector2(130, -78)
+
 [editable path="Cenario"]
 [editable path="CenarioCogumelo"]
+[editable path="MudaAyrton"]

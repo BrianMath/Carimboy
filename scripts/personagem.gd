@@ -4,7 +4,7 @@ const SPEED: float         = 300.0
 const CLIMB_SPEED: float   = 300.0
 const JUMP_VELOCITY: float = -500.0
 
-var modo_carimbo: bool = true
+var modo_carimbo: bool = false
 var qtd_carimbo: int = 0
 var draw_distance: int = 100
 var carimbo_scene0 := preload("res://scenes/carimbos/carimbo0.tscn")
@@ -22,47 +22,39 @@ var na_escada: bool = false
 var escadas_sobrepostas: int = 0
 
 func _ready() -> void:
-	get_parent().setup()
+	get_parent().get_parent().setup()
 	qtd_carimbo = Global.qtd_carimbos
-	Input.set_custom_mouse_cursor(mao, Input.CURSOR_ARROW, Vector2(64, 64))
+	Eventos.modo_carimbo.connect(_on_modo_carimbo)
 
-func _input(event) -> void:
-	# Troca entre os modos de jogo
-	if event.is_action_pressed("modo_carimbo_bt"):
-		modo_carimbo = !modo_carimbo
-		# Muda o símbolo do mouse
-		if modo_carimbo:
-			Input.set_custom_mouse_cursor(
-				mao, Input.CURSOR_ARROW, Vector2(64, 64))
-		else:
-			Input.set_custom_mouse_cursor(null)
-		queue_redraw()
-		return
+func _on_modo_carimbo(is_ativo, id_carimbo):
+	# Muda o símbolo do mouse
+	if is_ativo:
+		modo_carimbo = true
+		Input.set_custom_mouse_cursor(
+			mao, Input.CURSOR_ARROW, Vector2(64, 64))
+		
+		carimboy_atual = id_carimbo
+	else:
+		modo_carimbo = false
+		Input.set_custom_mouse_cursor(null)
+	
+	queue_redraw()
+	
+
+func _unhandled_input(event: InputEvent) -> void:
 	
 	# Reseta fase e limpa os carimbos
 	if event.is_action_pressed("reiniciar"):
 		position = Global.pos_inicial
+		velocity.y = 0
 		for c in carimbos:
 			c.queue_free()
 		carimbos = []
 		qtd_carimbo = Global.qtd_carimbos
+		Eventos.carimbou.emit(qtd_carimbo)
 	
 	if !modo_carimbo:
 		return
-	
-	# Muda a cor do Carimboy
-	if event.is_action_pressed("carimbo0"):
-		#$PlayerSprite.texture = carimboys[0]
-		carimboy_atual = 0
-	elif event.is_action_pressed("carimbo1"):
-		#$PlayerSprite.texture = carimboys[1]
-		carimboy_atual = 1
-	#elif event.is_action_pressed("carimboy_verde"):
-		#$PlayerSprite.texture = carimboys[2]
-		#carimboy_atual = 2
-	#elif event.is_action_pressed("carimboy_vermelho"):
-		#$PlayerSprite.texture = carimboys[3]
-		#carimboy_atual = 3
 	
 	# Ação de carimbar
 	if event.is_action_pressed("clicar") and qtd_carimbo > 0:
@@ -75,8 +67,9 @@ func _input(event) -> void:
 			var carimbo = carimbo_instance()
 			carimbos.append(carimbo)
 			carimbo.global_position = mouse_pos
-			get_parent().add_child(carimbo)
+			get_parent().get_parent().add_child(carimbo)
 			qtd_carimbo -= 1
+		Eventos.carimbou.emit(qtd_carimbo)
 
 func carimbo_instance():
 	match carimboy_atual:
@@ -95,8 +88,6 @@ func _physics_process(delta: float) -> void:
 	var dir_horizontal := Input.get_axis("esquerda", "direita")
 	var dir_vertical := Input.get_axis("cima", "baixo")
 	
-	if no_chao or na_escada:
-		$PlayerSprite.animation = "parado"
 	
 	# A ação de subir e descer só funciona se estiver em contato com a escada
 	if na_escada:
@@ -112,14 +103,26 @@ func _physics_process(delta: float) -> void:
 	
 	# Só pode pular se não estiver subindo
 	if Input.is_action_just_pressed("pular") and (no_chao or na_escada):
-		$PlayerSprite.animation = "pulando"
 		na_escada = false
 		velocity.y = JUMP_VELOCITY
 	
 	if dir_horizontal:
 		velocity.x = dir_horizontal * SPEED
+		
+		if dir_horizontal > 0:
+			$PlayerSprite.flip_h = false
+		else:
+			$PlayerSprite.flip_h = true
+		
+		if no_chao:
+			$PlayerSprite.animation = "andando"
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		$PlayerSprite.animation = "parado"
+	
+	if not (no_chao or na_escada):
+		$PlayerSprite.animation = "pulando"
 	
 	move_and_slide()
 

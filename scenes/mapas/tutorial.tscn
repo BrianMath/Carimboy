@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="3_ji5fh"]
 [ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_ji5fh"]
 [ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="5_wjtme"]
+[ext_resource type="PackedScene" uid="uid://dc3coa6fe2s3v" path="res://scenes/hud.tscn" id="6_4f1ky"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ji5fh"]
 
@@ -16,7 +17,12 @@ position = Vector2(957, 540)
 scale = Vector2(1.0041667, 1.0111111)
 texture = ExtResource("1_so1ry")
 
-[node name="Personagem" parent="." unique_id=62674396 instance=ExtResource("3_ji5fh")]
+[node name="HUD" parent="." unique_id=1988032793 instance=ExtResource("6_4f1ky")]
+
+[node name="CanvasPersonagem" type="CanvasLayer" parent="." unique_id=132717203]
+layer = 2
+
+[node name="Personagem" parent="CanvasPersonagem" unique_id=62674396 instance=ExtResource("3_ji5fh")]
 position = Vector2(171, 811)
 
 [node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_ji5fh")]
@@ -38,7 +44,7 @@ metadata/_edit_lock_ = true
 position = Vector2(1816, 529)
 
 [node name="CollisionShape2D" parent="MudaAyrton" index="0" unique_id=605292440]
-position = Vector2(106.5, -82)
+position = Vector2(106.5, -94)
 
 [connection signal="body_entered" from="FimDoMundo" to="." method="_on_area_2d_body_entered"]
 

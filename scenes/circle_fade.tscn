@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cfin1culjix57"]
+
+[ext_resource type="Script" uid="uid://kv0cj47t5ih0" path="res://scripts/circle_fade.gd" id="1_fwpou"]
+[ext_resource type="Shader" uid="uid://bpkxnqup05jy5" path="res://scripts/fade.gdshader" id="2_4miqm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_76d3x"]
+shader = ExtResource("2_4miqm")
+shader_parameter/_CirclePosition = Vector2(0.885, 0.28)
+shader_parameter/_Progress = 0.98999997787152
+shader_parameter/_Smoothness = 0.0999999977648
+shader_parameter/_Background = Color(1, 1, 1, 1)
+
+[node name="CircleFade" type="CanvasLayer" unique_id=1694613416]
+script = ExtResource("1_fwpou")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1264848825]
+material = SubResource("ShaderMaterial_76d3x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

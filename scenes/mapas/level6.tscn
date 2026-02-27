@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bqy46op7c4w0w"]
+
+[ext_resource type="Texture2D" uid="uid://b44wkdl2fdwop" path="res://sprites/mapas/final.png" id="1_4ixwi"]
+[ext_resource type="Script" uid="uid://deam1otmudmms" path="res://scripts/mapas/level6.gd" id="1_lpdnv"]
+[ext_resource type="PackedScene" uid="uid://baaijts4cr3rq" path="res://scenes/fade.tscn" id="2_3daek"]
+
+[node name="Level6" type="Node2D" unique_id=1537410971]
+script = ExtResource("1_lpdnv")
+
+[node name="fundo" type="Sprite2D" parent="." unique_id=1730530119]
+position = Vector2(960, 540)
+texture = ExtResource("1_4ixwi")
+
+[node name="Fade" parent="." unique_id=1694613416 instance=ExtResource("2_3daek")]

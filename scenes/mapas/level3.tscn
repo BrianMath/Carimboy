@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cffcy3hpwc5li"]
+
+[ext_resource type="Texture2D" uid="uid://i5v1jl7n0tng" path="res://sprites/mapas/level3.png" id="1_uw7am"]
+[ext_resource type="Script" uid="uid://2fdfsmmojuaq" path="res://scripts/mapas/level3.gd" id="1_wgpax"]
+[ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="2_gi2me"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="2_wgpax"]
+[ext_resource type="PackedScene" uid="uid://dc3coa6fe2s3v" path="res://scenes/hud.tscn" id="3_k1kn0"]
+[ext_resource type="PackedScene" uid="uid://071su61dp8de" path="res://scenes/muda_ayrton.tscn" id="5_qgqbf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wgpax"]
+
+[node name="Level3" type="Node2D" unique_id=1200864710]
+script = ExtResource("1_wgpax")
+
+[node name="FundoCenario" type="Sprite2D" parent="." unique_id=2033360765]
+position = Vector2(960, 540)
+texture = ExtResource("1_uw7am")
+
+[node name="HUD" parent="." unique_id=1988032793 instance=ExtResource("3_k1kn0")]
+
+[node name="CanvasPersonagem" type="CanvasLayer" parent="." unique_id=1424135840]
+layer = 2
+
+[node name="Personagem" parent="CanvasPersonagem" unique_id=62674396 instance=ExtResource("2_wgpax")]
+position = Vector2(51, 346)
+
+[node name="CenarioCima" parent="." unique_id=1886531964 instance=ExtResource("2_gi2me")]
+
+[node name="Formato" parent="CenarioCima" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(0, 67, 0, 450, -95, -10, 1924, 2, 1922, 120, 1870, 119, 1817, 111, 1760, 104, 1683, 109, 1647, 112, 1617, 119, 1593, 125, 1563, 152, 1526, 157, 1513, 161, 1482, 194, 1478, 217, 1476, 248, 1448, 299, 1440, 301, 1420, 291, 1413, 308, 1410, 325, 1402, 344, 1401, 392, 1396, 407, 1390, 450, 1383, 461, 1369, 460, 1359, 440, 1358, 376, 1354, 353, 1342, 325, 1335, 292, 1325, 253, 1310, 280, 1300, 278, 1295, 266, 1285, 203, 1278, 191, 1274, 168, 1266, 158, 1253, 115, 1228, 110, 1187, 92, 1126, 97, 1056, 98, 1002, 108, 963, 107, 910, 112, 873, 114, 849, 113, 844, 119, 839, 137, 834, 150, 833, 159, 829, 157, 822, 148, 815, 133, 797, 98, 787, 93, 764, 94, 736, 98, 709, 101, 678, 104, 547, 97, 500, 97, 413, 100, 399, 101, 268, 90, 178, 88, 119, 84, 41, 70)
+
+[node name="CenarioBaixo" parent="." unique_id=905927359 instance=ExtResource("2_gi2me")]
+
+[node name="Formato" parent="CenarioBaixo" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(1, 442, 102, 434, 199, 435, 200, 474, 214, 550, 197, 579, 172, 631, 159, 658, 154, 683, 152, 719, 144, 754, 144, 841, 138.80753, 869.92944, 141, 910, 153, 978, 210.9797, 984.44214, 234, 987, 437, 989, 612, 982, 611, 1222, 1775, 1231, 1774, 1076, 1774, 1030, 1763, 979, 1739, 916, 1727, 896, 1710, 876, 1675, 840, 1655, 814, 1636, 784, 1614, 760, 1589, 740, 1563, 723, 1542, 710, 1525, 670, 1526, 659, 1575, 636, 1621, 623, 1659, 621, 1759, 616, 1918, 616, 1918, 1370, 1, 1343)
+
+[node name="CenarioBlocoH" parent="." unique_id=1955306138 instance=ExtResource("2_gi2me")]
+
+[node name="Formato" parent="CenarioBlocoH" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(873, 696, 864, 688, 841, 682, 833, 681, 799, 684, 776, 685, 741, 687, 708, 689, 681, 689, 675, 694, 674, 722, 676, 747, 682, 751, 691, 753, 729, 751, 760, 749, 839, 747, 858, 747, 863, 743, 869, 734, 875, 703)
+
+[node name="CenarioBlocoV" parent="." unique_id=774211793 instance=ExtResource("2_gi2me")]
+
+[node name="Formato" parent="CenarioBlocoV" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(1136, 318, 1079, 318, 1025, 323, 1025, 354, 1031, 416, 1033, 460, 1034, 508, 1031, 531, 1029, 544, 1033, 564, 1043, 582, 1046, 586, 1050, 588, 1055, 585, 1058, 595, 1067, 605, 1073, 612, 1094, 612, 1097, 614, 1109, 629, 1111, 634, 1118, 651, 1123, 658, 1133, 656, 1134, 651, 1137, 647, 1141, 623, 1157, 546, 1156, 493, 1155, 473, 1151, 435, 1152, 394, 1151, 372, 1147, 356, 1145, 345, 1144, 329)
+
+[node name="FimDoMundo" type="Area2D" parent="." unique_id=1291456048]
+position = Vector2(1139, 1209)
+collision_layer = 2
+
+[node name="ColisaoFim" type="CollisionShape2D" parent="FimDoMundo" unique_id=881260899]
+shape = SubResource("WorldBoundaryShape2D_wgpax")
+metadata/_edit_lock_ = true
+
+[node name="MudaAyrton" parent="." unique_id=1579505250 instance=ExtResource("5_qgqbf")]
+position = Vector2(1816, 529)
+
+[node name="CollisionShape2D" parent="MudaAyrton" index="0" unique_id=605292440]
+position = Vector2(106.5, -82)
+
+[connection signal="body_entered" from="FimDoMundo" to="." method="_on_fim_do_mundo_body_entered"]
+
+[editable path="CenarioCima"]
+[editable path="CenarioBaixo"]
+[editable path="CenarioBlocoH"]
+[editable path="CenarioBlocoV"]
+[editable path="MudaAyrton"]

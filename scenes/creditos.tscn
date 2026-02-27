@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6bht685sqdfh"]
 
-[ext_resource type="Texture2D" uid="uid://b3i3c20getp0g" path="res://sprites/menu/menu.png" id="1_jddgq"]
 [ext_resource type="Script" uid="uid://dw81u3ou1jlen" path="res://scripts/creditos.gd" id="1_lrn2f"]
-[ext_resource type="Texture2D" uid="uid://c8ij4afejdd81" path="res://sprites/menu/sair.png" id="2_lgbdq"]
+[ext_resource type="Texture2D" uid="uid://drp2dkghpvmeo" path="res://sprites/menu/bgcreditos.png" id="2_lrn2f"]
+[ext_resource type="Texture2D" uid="uid://dek0s7k3ospr4" path="res://sprites/menu/voltar.png" id="3_lrn2f"]
 [ext_resource type="Texture2D" uid="uid://bk2h0c0ombwim" path="res://sprites/menu/picotado.png" id="4_3ghxt"]
 [ext_resource type="Texture2D" uid="uid://cpd8ohf4amnll" path="res://sprites/icons/brian.png" id="6_lrn2f"]
 [ext_resource type="Texture2D" uid="uid://cut2k37gtqitl" path="res://sprites/icons/bult xd.png" id="7_3ghxt"]
@@ -17,14 +17,14 @@ script = ExtResource("1_lrn2f")
 z_index = -10
 z_as_relative = false
 position = Vector2(960, 540)
-texture = ExtResource("1_jddgq")
+texture = ExtResource("2_lrn2f")
 
 [node name="tbtn_sair" type="TextureButton" parent="." unique_id=21633303]
-offset_left = 1554.0
-offset_top = 804.0
-offset_right = 1843.0
-offset_bottom = 987.1884
-texture_normal = ExtResource("2_lgbdq")
+offset_left = 1485.0
+offset_top = 809.0
+offset_right = 1865.0
+offset_bottom = 973.0
+texture_normal = ExtResource("3_lrn2f")
 
 [node name="picotado" type="Sprite2D" parent="." unique_id=1576013563]
 z_index = -200
@@ -40,7 +40,7 @@ volume_db = 5.0
 [node name="Pessoas" type="Node" parent="." unique_id=1836402962]
 
 [node name="Brian" type="Sprite2D" parent="Pessoas" unique_id=2007350018]
-position = Vector2(245, 914)
+position = Vector2(307, 357)
 texture = ExtResource("6_lrn2f")
 
 [node name="Label" type="Label" parent="Pessoas/Brian" unique_id=1627504834]
@@ -61,7 +61,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BultXd" type="Sprite2D" parent="Pessoas" unique_id=1098059536]
-position = Vector2(755, 722)
+position = Vector2(642, 809)
 texture = ExtResource("7_3ghxt")
 
 [node name="Label2" type="Label" parent="Pessoas/BultXd" unique_id=140358590]
@@ -82,7 +82,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rafael" type="Sprite2D" parent="Pessoas" unique_id=795735034]
-position = Vector2(1318, 866)
+position = Vector2(1679, 351)
 texture = ExtResource("8_n1vwi")
 
 [node name="Label3" type="Label" parent="Pessoas/Rafael" unique_id=2066935724]
@@ -103,7 +103,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Victor" type="Sprite2D" parent="Pessoas" unique_id=1135165103]
-position = Vector2(1692, 431)
+position = Vector2(1250, 778)
 texture = ExtResource("9_ouidq")
 
 [node name="Label4" type="Label" parent="Pessoas/Victor" unique_id=396926201]

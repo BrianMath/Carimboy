@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dqkprtqhw2bev"]
+
+[ext_resource type="Script" uid="uid://buippl5y6ppcn" path="res://scripts/mapas/level5.gd" id="1_ehdoe"]
+[ext_resource type="Texture2D" uid="uid://8boq6esqd6q5" path="res://sprites/mapas/level5_1.png" id="2_w3ew0"]
+[ext_resource type="PackedScene" uid="uid://dc3coa6fe2s3v" path="res://scenes/hud.tscn" id="3_teq6u"]
+[ext_resource type="PackedScene" uid="uid://cihnplabnec0n" path="res://scenes/personagem.tscn" id="3_urokp"]
+[ext_resource type="PackedScene" uid="uid://cnbmrg3kdnd36" path="res://scenes/cenario.tscn" id="4_teq6u"]
+[ext_resource type="Texture2D" uid="uid://dwh367avwtv4e" path="res://sprites/mapas/level5_2.png" id="5_3r4ne"]
+[ext_resource type="Script" uid="uid://cmg5m21ksw2lc" path="res://scripts/cubo.gd" id="6_urokp"]
+[ext_resource type="PackedScene" uid="uid://cfin1culjix57" path="res://scenes/circle_fade.tscn" id="8_3r4ne"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3r4ne"]
+radius = 134.3019
+
+[node name="Level5" type="Node2D" unique_id=18334878]
+script = ExtResource("1_ehdoe")
+
+[node name="FundoCenario" type="Sprite2D" parent="." unique_id=1882453984]
+position = Vector2(960, 540)
+texture = ExtResource("2_w3ew0")
+
+[node name="HUD" parent="." unique_id=1988032793 instance=ExtResource("3_teq6u")]
+
+[node name="CanvasPersonagem" type="CanvasLayer" parent="." unique_id=1755595245]
+layer = 2
+
+[node name="Personagem" parent="CanvasPersonagem" unique_id=62674396 instance=ExtResource("3_urokp")]
+position = Vector2(105, 733)
+
+[node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_teq6u")]
+visible = false
+
+[node name="Formato" parent="Cenario" index="0" unique_id=280072083]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-133, -12, -41, 1083, 1210, 1030, 1926, 924, 1920, 732, 1403, 730, 1405, 799, 1352, 802, 1352, 848, 1298, 851, 1298, 893, 1238, 894, 1238.2467, 937.1001, 456, 952, 444, 878, 313, 874, 300, 813, 47, 814, 53, 538, 57, 391, 56, 331, 76, 283, 107, 259, 134, 218, 141, 125, 192, 123, 200, 65, 291, 64, 390, 45, 739, 55, 1272, 46, 1921, 46, 1921, 927, 2204, -28)
+
+[node name="Cubo" type="Sprite2D" parent="." unique_id=64426909]
+position = Vector2(1725, 305)
+rotation = -0.30543262
+texture = ExtResource("5_3r4ne")
+script = ExtResource("6_urokp")
+
+[node name="FimJogo" type="Area2D" parent="." unique_id=1474317896]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FimJogo" unique_id=771849004]
+position = Vector2(1705, 303)
+shape = SubResource("CircleShape2D_3r4ne")
+
+[node name="CircleFade" parent="." unique_id=1694613416 instance=ExtResource("8_3r4ne")]
+layer = 2
+visible = false
+
+[connection signal="body_entered" from="FimJogo" to="." method="_on_fim_jogo_body_entered"]
+
+[editable path="Cenario"]
