@@ -1,5 +1,9 @@
 extends Node2D
 
+
+func _ready() -> void:
+	Musica.play_music(2)
+
 func setup():
 	Global.pos_inicial = Vector2(105, 733)
 	Global.level = 5

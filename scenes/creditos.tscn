@@ -40,6 +40,7 @@ volume_db = 5.0
 [node name="Pessoas" type="Node" parent="." unique_id=1836402962]
 
 [node name="Brian" type="Sprite2D" parent="Pessoas" unique_id=2007350018]
+z_index = -1
 position = Vector2(307, 357)
 texture = ExtResource("6_lrn2f")
 
@@ -61,6 +62,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BultXd" type="Sprite2D" parent="Pessoas" unique_id=1098059536]
+z_index = -1
 position = Vector2(642, 809)
 texture = ExtResource("7_3ghxt")
 
@@ -82,6 +84,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rafael" type="Sprite2D" parent="Pessoas" unique_id=795735034]
+z_index = -1
 position = Vector2(1679, 351)
 texture = ExtResource("8_n1vwi")
 
@@ -103,6 +106,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Victor" type="Sprite2D" parent="Pessoas" unique_id=1135165103]
+z_index = -1
 position = Vector2(1250, 778)
 texture = ExtResource("9_ouidq")
 

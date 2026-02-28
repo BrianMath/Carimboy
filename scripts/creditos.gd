@@ -1,7 +1,7 @@
 extends Node2D
 
 var nome
-var sair     := load("res://sprites/menu/sair.png")
+var voltar     := load("res://sprites/menu/voltar.png")
 var mao      := load("res://sprites/menu/mao.png")
 var flag = false
 
@@ -10,7 +10,7 @@ var carimbos = []
 @onready var pos_picotado: Vector2 = $picotado.position - (Vector2(400, 300) / 2)
 
 func _on_tbtn_sair_pressed() -> void:
-	nome = "sair"
+	nome = "voltar"
 	processar_botao()
 
 func processar_botao() -> void:
@@ -29,8 +29,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		# Desenha o carimbo na tela
 		if flag:
 			$Click.play()
-			pos_desenho = event.position - (sair.get_size() / 2)
-			carimbos.append([sair, pos_desenho])
+			pos_desenho = event.position - (voltar.get_size() / 2)
+			carimbos.append([voltar, pos_desenho])
 			queue_redraw()
 		
 		# Se o carimbo foi em cima do picotado, coisa o negócio

@@ -11,6 +11,9 @@ var tex_desenho = null
 var carimbos = []
 var nome: String = ""
 
+func _ready() -> void:
+		Musica.play_music(0)
+
 func _on_tbtn_jogar_pressed() -> void:
 	nome = "jogar"
 	processar_botao()
@@ -45,6 +48,7 @@ func change_scene() -> void:
 	match nome:
 		"jogar":
 			Input.set_custom_mouse_cursor(null)
+			Musica.stop_music()
 			get_tree().change_scene_to_file("res://scenes/mapas/tutorial.tscn")
 		
 		"creditos":

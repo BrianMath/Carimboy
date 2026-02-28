@@ -7,6 +7,7 @@ func _ready() -> void:
 		texturas.append(load("res://sprites/numeros/%d.png" % i))
 	
 	Eventos.carimbou.connect(_on_carimbou)
+	
 
 func _on_carimbou(qtd_carimbos):
 	atualizar_numero(qtd_carimbos)

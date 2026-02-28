@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://d1bh3msnu4g7s"
 Eventos="*uid://drxnve42i3mnu"
+Musica="*uid://cmlis7s1s2fyk"
 
 [display]
 
@@ -30,6 +31,7 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://musicas/": "pink",
 "res://scenes/": "blue",
 "res://scripts/": "green",
 "res://sounds/": "orange",

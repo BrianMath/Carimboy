@@ -6,7 +6,6 @@ func _ready() -> void:
 	get_tree().paused = false
 
 func fade_out():
-	print("ccc")
 	var tween = create_tween()
 	tween.tween_method(
 		func(v): color_rect.modulate.a = v,

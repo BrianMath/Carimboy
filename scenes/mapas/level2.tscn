@@ -21,7 +21,7 @@ texture = ExtResource("2_luss2")
 layer = 2
 
 [node name="Personagem" parent="CanvasPersonagem" unique_id=62674396 instance=ExtResource("3_eclin")]
-position = Vector2(171, 811)
+position = Vector2(215, 930)
 
 [node name="Cenario" parent="." unique_id=1886531964 instance=ExtResource("4_2jsi5")]
 

@@ -10,12 +10,7 @@ var draw_distance: int = 100
 var carimbo_scene0 := preload("res://scenes/carimbos/carimbo0.tscn")
 var carimbo_scene1 := preload("res://scenes/carimbos/carimbo1.tscn")
 var carimbos: Array
-var carimboys: Array = [
-	preload("res://sprites/carimboys/carimboy_azul.png"),
-	preload("res://sprites/carimboys/carimboy_amarelo.png"),
-	preload("res://sprites/carimboys/carimboy_verde.png"),
-	preload("res://sprites/carimboys/carimboy_vermelho.png")
-]
+
 var carimboy_atual: int = 0
 var mao = preload("res://sprites/menu/mao_pequena.png")
 var na_escada: bool = false
@@ -91,6 +86,7 @@ func _physics_process(delta: float) -> void:
 	
 	# A ação de subir e descer só funciona se estiver em contato com a escada
 	if na_escada:
+		#print("a ", dir_vertical)
 		# Enquanto estiver pressionando cima/baixo se movimenta na escada
 		if dir_vertical:
 			velocity.y = dir_vertical * CLIMB_SPEED
@@ -114,15 +110,23 @@ func _physics_process(delta: float) -> void:
 		else:
 			$PlayerSprite.flip_h = true
 		
-		if no_chao:
-			$PlayerSprite.animation = "andando"
-		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		$PlayerSprite.animation = "parado"
 	
-	if not (no_chao or na_escada):
-		$PlayerSprite.animation = "pulando"
+	
+	# Animação - bloco único no final, ordem = prioridade
+	if (not no_chao) and (not na_escada):
+		$PlayerSprite.animation = "pulando%d" % carimboy_atual
+	elif na_escada:
+		if dir_vertical:
+			$PlayerSprite.animation = "escada%d" % carimboy_atual
+		else:
+			$PlayerSprite.animation = "escadaparado%d" % carimboy_atual
+	elif dir_horizontal:
+		if no_chao:
+			$PlayerSprite.animation = "andando%d" % carimboy_atual
+	else:
+		$PlayerSprite.animation = "parado%d" % carimboy_atual
 	
 	move_and_slide()
 

@@ -1,87 +1,158 @@
 [gd_scene format=3 uid="uid://cihnplabnec0n"]
 
 [ext_resource type="Script" uid="uid://b2kw0k06v3mp3" path="res://scripts/personagem.gd" id="1_4dohe"]
-[ext_resource type="Texture2D" uid="uid://3djo2rw4mgwb" path="res://sprites/carimboys/animacao.png" id="2_hfj4i"]
-[ext_resource type="Texture2D" uid="uid://xsedidptkqjd" path="res://sprites/carimboys/pulando.png" id="3_en60c"]
+[ext_resource type="Texture2D" uid="uid://b368r7u1hyhvu" path="res://sprites/carimboys/andandoroxo1.png" id="2_b6jax"]
+[ext_resource type="Texture2D" uid="uid://d7ggfjf20nc5" path="res://sprites/carimboys/paradoroxo.png" id="3_13tpd"]
 [ext_resource type="AudioStream" uid="uid://dbdtiml38ao5f" path="res://sounds/carimbo.mp3" id="4_dqkch"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jc3tx"]
-atlas = ExtResource("2_hfj4i")
-region = Rect2(0, 0, 560, 420)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8b40"]
-atlas = ExtResource("2_hfj4i")
-region = Rect2(1120, 0, 560, 420)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7him"]
-atlas = ExtResource("2_hfj4i")
-region = Rect2(1680, 0, 560, 420)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4wo2"]
-atlas = ExtResource("2_hfj4i")
-region = Rect2(0, 420, 560, 420)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3odkn"]
-atlas = ExtResource("2_hfj4i")
-region = Rect2(560, 420, 560, 420)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_760tl"]
-atlas = ExtResource("2_hfj4i")
-region = Rect2(1120, 420, 560, 420)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_en60c"]
-atlas = ExtResource("2_hfj4i")
-region = Rect2(1120, 0, 560, 420)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hfj4i"]
-atlas = ExtResource("3_en60c")
-region = Rect2(0, 0, 420, 420)
+[ext_resource type="Texture2D" uid="uid://316jv31yowso" path="res://sprites/carimboys/andandoroxo3.png" id="4_yxsge"]
+[ext_resource type="Texture2D" uid="uid://dfbjtxba2onxp" path="res://sprites/carimboys/andandoroxo2.png" id="5_t5v4w"]
+[ext_resource type="Texture2D" uid="uid://cym2xj8x65t66" path="res://sprites/carimboys/andandocianu1.png" id="6_7tpu2"]
+[ext_resource type="Texture2D" uid="uid://bk3a1ujbdk8y4" path="res://sprites/carimboys/paradociano.png" id="7_mjf1n"]
+[ext_resource type="Texture2D" uid="uid://cfcb7rq1mkfyr" path="res://sprites/carimboys/andandocianu2.png" id="8_nvesl"]
+[ext_resource type="Texture2D" uid="uid://d275uf8iuf8x4" path="res://sprites/carimboys/andandocianu3.png" id="9_cd6xi"]
+[ext_resource type="Texture2D" uid="uid://be5tkgycbjjpp" path="res://sprites/carimboys/escalandoroxo1.png" id="10_uubqm"]
+[ext_resource type="Texture2D" uid="uid://dj7ya0dnp1ico" path="res://sprites/carimboys/escalandoroxo2.png" id="11_hfusi"]
+[ext_resource type="Texture2D" uid="uid://3asbdp8a6f62" path="res://sprites/carimboys/escalandoroxo3.png" id="12_fxtkf"]
+[ext_resource type="Texture2D" uid="uid://pk6t4of3yh3a" path="res://sprites/carimboys/escalandocianu.png" id="13_3r144"]
+[ext_resource type="Texture2D" uid="uid://dcxx73p015lm0" path="res://sprites/carimboys/escalandocianu2.png" id="14_n0hfe"]
+[ext_resource type="Texture2D" uid="uid://ccwlo8hv4o8t2" path="res://sprites/carimboys/escalandocianu3.png" id="15_bcyjo"]
+[ext_resource type="Texture2D" uid="uid://1ljjls41w86m" path="res://sprites/carimboys/pulandoroxo.png" id="16_sobjn"]
+[ext_resource type="Texture2D" uid="uid://cttiep6arax2k" path="res://sprites/carimboys/pulandocianu.png" id="17_ys6bf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bss74"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jc3tx")
+"texture": ExtResource("2_b6jax")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i8b40")
+"texture": ExtResource("3_13tpd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n7him")
+"texture": ExtResource("4_yxsge")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m4wo2")
+"texture": ExtResource("5_t5v4w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3odkn")
+"texture": ExtResource("4_yxsge")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_760tl")
+"texture": ExtResource("3_13tpd")
 }],
 "loop": true,
-"name": &"andando",
+"name": &"andando0",
 "speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_en60c")
+"texture": ExtResource("6_7tpu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mjf1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nvesl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cd6xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nvesl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mjf1n")
 }],
 "loop": true,
-"name": &"parado",
+"name": &"andando1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_uubqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hfusi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uubqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fxtkf")
+}],
+"loop": true,
+"name": &"escada0",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_3r144")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n0hfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3r144")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bcyjo")
+}],
+"loop": true,
+"name": &"escada1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_uubqm")
+}],
+"loop": true,
+"name": &"escadaparado0",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hfj4i")
+"texture": ExtResource("13_3r144")
 }],
 "loop": true,
-"name": &"pulando",
+"name": &"escadaparado1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_13tpd")
+}],
+"loop": true,
+"name": &"parado0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mjf1n")
+}],
+"loop": true,
+"name": &"parado1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_sobjn")
+}],
+"loop": true,
+"name": &"pulando0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ys6bf")
+}],
+"loop": true,
+"name": &"pulando1",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 24.0
-height = 92.0
+height = 108.0
 
 [node name="Personagem" type="CharacterBody2D" unique_id=62674396]
 z_index = 1
@@ -93,10 +164,11 @@ metadata/_edit_horizontal_guides_ = [-24.0]
 position = Vector2(0, -0.99999994)
 scale = Vector2(0.21666665, 0.21666665)
 sprite_frames = SubResource("SpriteFrames_bss74")
-animation = &"andando"
-autoplay = "parado"
+animation = &"andando1"
+autoplay = "parado0"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=784244878]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_g2els")
 
@@ -105,6 +177,7 @@ stream = ExtResource("4_dqkch")
 volume_db = 5.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2062789606]
+visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1561689811]
